@@ -31,7 +31,7 @@ export const fetchDecksFailure = _error => {
 const reducer = handleActions(
   {
     [FETCH_DECKS_SUCCESS]: (state, action) => {
-      const decks = action.payload.decks;
+      const decks = action.payload.decks
 
       return {
         ...state,
@@ -42,4 +42,4 @@ const reducer = handleActions(
   initialDeckState,
 )
 
-export default reducer;
+export default reducer

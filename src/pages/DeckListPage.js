@@ -1,20 +1,56 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
+import api from '../api'
 import DeckListComponent from '../components/DeckListComponent'
+import { fetchDecksSuccess } from '../redux/ducks/deck'
 
 class DeckListPage extends Component {
   constructor(props) {
-    super(props);
-    this.state = {  };
+    super(props)
+    this.state = {  }
   }
-  
+
+  fetchDecks() {
+    api.getDecks().then(response => {
+      this.props.fetchDecksSuccess(response.data)
+    })
+  }
+
   render() {
+    // same as saying const deck = this.props.deck
+    const { deck } = this.props
+
     return (
       <div>
-        <DeckListComponent />
+        <h1>This is the DeckListPage!</h1>
+        <button
+          onClick={() => this.fetchDecks()}
+        >
+          Click me!
+        </button>
+        <DeckListComponent decks={deck.decks} />
       </div>
-    );
+    )
   }
 }
 
-export default DeckListPage;
+const mapStateToProps = state => {
+  const { deck } = state
+
+  return {
+    deck,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      fetchDecksSuccess,
+    },
+    dispatch,
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeckListPage)
