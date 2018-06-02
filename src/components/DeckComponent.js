@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 class DeckComponent extends Component {
   constructor(props) {

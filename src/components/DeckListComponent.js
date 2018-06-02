@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import DeckComponent from './DeckComponent'
+import DeckComponent from "./DeckComponent"
 
 class DeskListComponent extends Component {
   constructor(props) {

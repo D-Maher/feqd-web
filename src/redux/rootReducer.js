@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux"
 
-import deck from './ducks/deck'
+import deck from "./ducks/deck"
 
 // all reducers combined
 const rootReducer = combineReducers({
