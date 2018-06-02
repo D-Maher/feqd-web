@@ -5,6 +5,6 @@
   },
   {
     "name": "Production",
-    "baseURL": "https://piccolo-boyz.herokuapp.com/"
+    "baseURL": "https://feqd-api.herokuapp.com/"
   }
 ]
