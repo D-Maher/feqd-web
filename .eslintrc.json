@@ -11,6 +11,7 @@
     "it": false,
     "process": false
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
