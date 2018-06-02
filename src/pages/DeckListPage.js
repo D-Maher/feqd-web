@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 
@@ -34,6 +35,14 @@ class DeckListPage extends Component {
       </div>
     )
   }
+}
+
+DeckListPage.propTypes = {
+  // A function that handles a successful API call to fetch decks
+  fetchDecksSuccess: PropTypes.func.isRequired,
+
+  // A list of decks retrieved from the API
+  decks: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => {
