@@ -10,11 +10,11 @@ const createApi = ({ baseURL }) => {
 
   // Gets a list of all decks from the API
   const getDecks = () => {
-    return api.get('/decks')
+    return api.get("/decks")
   }
 
   return {
-    getDecks
+    getDecks,
   }
 }
 

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import DeckComponent from './DeckComponent'
+import DeckComponent from "./DeckComponent"
 
 class DeskListComponent extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class DeskListComponent extends Component {
         {
           decks.map(deck => {
             return (
-              <DeckComponent deck={deck} />
+              <DeckComponent key={deck.id} deck={deck} />
             )
           })
         }
