@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 
 import DeckComponent from "./DeckComponent"
 
@@ -25,6 +26,11 @@ class DeskListComponent extends Component {
       </div>
     )
   }
+}
+
+DeskListComponent.propTypes = {
+  // A list of decks to display
+  decks: PropTypes.array.isRequired,
 }
 
 export default DeskListComponent

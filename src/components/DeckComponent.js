@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 
 class DeckComponent extends Component {
   constructor(props) {
@@ -16,6 +17,11 @@ class DeckComponent extends Component {
       </div>
     )
   }
+}
+
+DeckComponent.propTypes = {
+  // A single deck to choose
+  deck: PropTypes.object.isRequired,
 }
 
 export default DeckComponent
