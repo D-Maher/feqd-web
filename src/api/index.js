@@ -1,7 +1,7 @@
 import apisauce from "apisauce"
 import environments from "../config/environments"
 
-const { baseURL } = environments[1]
+const { baseURL } = process.env.NODE_ENV === "development" ? environments[0] : environments[1]
 
 const createApi = ({ baseURL }) => {
   const api = apisauce.create({
