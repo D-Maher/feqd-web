@@ -23,13 +23,29 @@
     "react"
   ],
   "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "no-console": [
+      "warn"
+    ],
     "linebreak-style": [
       "error",
       "unix"
     ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "quotes": [
       "error",
       "double"
+    ],
+    "react/prop-types": [
+      "warn"
     ],
     "semi": [
       "error",
