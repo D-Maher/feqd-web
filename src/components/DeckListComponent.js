@@ -18,7 +18,7 @@ class DeskListComponent extends Component {
         {
           decks.map(deck => {
             return (
-              <DeckComponent deck={deck} />
+              <DeckComponent key={deck.id} deck={deck} />
             )
           })
         }
