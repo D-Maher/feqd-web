@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Dev",
+    "baseURL": "http://localhost:3000"
+  },
+  {
+    "name": "Production",
+    "baseURL": "https://piccolo-boyz.herokuapp.com/"
+  }
+]
