@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React, { Component } from "react"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 
-import api from '../api'
-import DeckListComponent from '../components/DeckListComponent'
-import { fetchDecksSuccess } from '../redux/ducks/deck'
+import api from "../api"
+import DeckListComponent from "../components/DeckListComponent"
+import { fetchDecksSuccess } from "../redux/ducks/deck"
 
 class DeckListPage extends Component {
   constructor(props) {

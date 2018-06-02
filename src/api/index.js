@@ -14,7 +14,7 @@ const createApi = ({ baseURL }) => {
   }
 
   return {
-    getDecks
+    getDecks,
   }
 }
 
