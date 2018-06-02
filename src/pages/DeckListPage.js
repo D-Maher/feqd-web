@@ -20,7 +20,7 @@ class DeckListPage extends Component {
 
   render() {
     // same as saying const deck = this.props.deck
-    const { deck } = this.props
+    const { decks } = this.props
 
     return (
       <div>
@@ -30,27 +30,27 @@ class DeckListPage extends Component {
         >
           Click me!
         </button>
-        <DeckListComponent decks={deck.decks} />
+        <DeckListComponent decks={decks} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  const { deck } = state
+  const { decks } = state.deck
 
   return {
-    deck,
+    decks,
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch => (
+  bindActionCreators(
     {
       fetchDecksSuccess,
     },
     dispatch,
   )
-}
+)
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckListPage)
