@@ -7,6 +7,10 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "globals": {
+    "it": false,
+    "process": false
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
