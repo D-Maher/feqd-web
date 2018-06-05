@@ -9,10 +9,6 @@ const initialState = {}
 //   logger,
 // ]
 
-const store = createStore(
-  rootReducer,
-  initialState,
-  compose(applyMiddleware(logger)),
-)
+const store = createStore(rootReducer, initialState, compose(applyMiddleware(logger)))
 
 export default store

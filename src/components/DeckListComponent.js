@@ -6,9 +6,7 @@ import DeckComponent from "./DeckComponent"
 class DeskListComponent extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   render() {
@@ -16,13 +14,9 @@ class DeskListComponent extends Component {
 
     return (
       <div>
-        {
-          decks.map(deck => {
-            return (
-              <DeckComponent key={deck.id} deck={deck} />
-            )
-          })
-        }
+        {decks.map(deck => {
+          return <DeckComponent key={deck.id} deck={deck} />
+        })}
       </div>
     )
   }

@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 class DeckComponent extends Component {
   constructor(props) {
     super(props)
-    this.state = {  }
+    this.state = {}
   }
-  
+
   render() {
     const { deck } = this.props
 
