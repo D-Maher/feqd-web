@@ -10,7 +10,7 @@ import { fetchDecksSuccess } from "../redux/ducks/deck"
 class DeckListPage extends Component {
   constructor(props) {
     super(props)
-    this.state = {  }
+    this.state = {}
   }
 
   fetchDecks() {
@@ -26,11 +26,7 @@ class DeckListPage extends Component {
     return (
       <div>
         <h1>This is the DeckListPage!</h1>
-        <button
-          onClick={() => this.fetchDecks()}
-        >
-          Click me!
-        </button>
+        <button onClick={() => this.fetchDecks()}>Click me!</button>
         <DeckListComponent decks={decks} />
       </div>
     )
@@ -53,13 +49,15 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       fetchDecksSuccess,
     },
     dispatch,
   )
-)
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeckListPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(DeckListPage)
