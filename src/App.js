@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Provider } from "react-redux"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
-import logo from "./logo.svg"
 import "./App.css"
 import store from "./redux/store"
 import DeckListPage from "./pages/DeckListPage"
@@ -10,17 +10,14 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-
-          <DeckListPage />
-        </div>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={DeckListPage} />
+            {/* <Route path="/decks" component={DeckListPage} /> */}
+            {/* <Route path="/game" component={GamePage} /> */}
+            {/* <Route path="/complete" component={GameCompletionPage} /> */}
+          </Switch>
+        </Router>
       </Provider>
     )
   }
