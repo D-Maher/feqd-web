@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 
 import api from "../api"
 import DeckListComponent from "../components/DeckListComponent"
-import { fetchDecksSuccess } from "../redux/ducks/deck"
+import { getDecksSuccess } from "../redux/actions"
 
 class DeckListPage extends Component {
   constructor(props) {
@@ -13,20 +13,19 @@ class DeckListPage extends Component {
     this.state = {}
   }
 
-  fetchDecks() {
+  getDecks() {
     api.getDecks().then(response => {
-      this.props.fetchDecksSuccess(response.data)
+      this.props.getDecksSuccess(response.data)
     })
   }
 
   render() {
-    // same as saying const deck = this.props.deck
     const { decks } = this.props
 
     return (
       <div>
         <h1>This is the DeckListPage!</h1>
-        <button onClick={() => this.fetchDecks()}>Click me!</button>
+        <button onClick={() => this.getDecks()}>Click me!</button>
         <DeckListComponent decks={decks} />
       </div>
     )
@@ -34,15 +33,15 @@ class DeckListPage extends Component {
 }
 
 DeckListPage.propTypes = {
-  // A function that handles a successful API call to fetch decks
-  fetchDecksSuccess: PropTypes.func.isRequired,
+  // A function that handles a successful API call to get decks
+  getDecksSuccess: PropTypes.func.isRequired,
 
   // A list of decks retrieved from the API
   decks: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => {
-  const { decks } = state.deck
+  const { decks } = state
 
   return {
     decks,
@@ -52,7 +51,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchDecksSuccess,
+      getDecksSuccess,
     },
     dispatch,
   )
